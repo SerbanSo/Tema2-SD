@@ -1,0 +1,30 @@
+Sorohan Serban 311CC
+
+
+Implementare arbore:
+	-Implementarea arborelui multicai am facut-o utilizand un arbore de tip fiu stang, frate drept.
+	-Pentru a retine adresele unui server DNS folosesc o lista de adrese (addrList).
+	-Subprogramul "getIDNode" intoarce nodul cu id cautat din arbore sau NULL daca acesta nu exista.
+
+
+Task 1:
+	-Citesc din fisier fiecare server DNS.
+	-Daca parintele serverului nu se afla in arbore, adaug serverul intr-o lista de asteptare (waitList), acesta fiind orfan.				
+	-Daca parintele serverului se afla in arbore, il adaug in arbore si parcurg lista de asteptare in cautarea orfanilor care il ca au parinte pe serverul adaugat.
+	-De fiecare data cand un orfan este introdus in arbore, se reparcurge lista de asteptare, cautand orfanii care il au ca parinte pe orfanul proaspat introdus.
+
+
+Task 2:
+	-Parcurg recursiv arborele, iar cand ajung la frunze incep sa adaug la parinti adresele copiilor.
+
+
+Task 3:
+	-Folosesc un vector (alocat dinamic) de utilizatori in care tin minte id-ul acestora si id-ul serverului DNS de care apartin
+	-Pentru fiecare cerere de adresa, caut adresa in serverul DNS de care apartine utilizatorul care initiaza cererea. Daca adresa nu se afla in server, se cauta in parintele (parintele parintelui s.a.m.d) serverului pana se gaseste, urmand ca adresa sa fie adaugata in fiecare server in care nu a fost gasita.
+
+
+Bonus:
+	-Implementeara am facut-o in cadrul task-ului 3.
+	-Pentru fiecare server picat:
+		-Se actualizeaza serverele DNS de care tin utilizatorii
+		-Copiii serverului sunt 'adoptati' de parintele serverului
